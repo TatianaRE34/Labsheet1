@@ -41,35 +41,13 @@ namespace LabsheetClassLibrary
 
         public void CheckRange(int inputValue)
         {
-            //int[] value = (int[])Enum.GetValues(typeof(Categories));
-            //int count = 0;
-            //foreach (var name in Categories.GetNames(typeof(Categories)))
-            //{
-            //    Console.WriteLine("count: ", count);
-            //    Console.WriteLine("Current val: ", value[count]);
-            //    Console.WriteLine("Previous val: ",value[count - 1]);
-            //    if ((inputValue >= 0) && (inputValue <= value[count]))
-            //    {
-
-            //        Console.WriteLine(name);
-            //        break;
-            //    }
-            //    else if((inputValue >(value[count-1])) && (inputValue <= value[count]))
-            //    {
-            //        Console.WriteLine(name);
-            //        break;
-
-            //    }
-            //    count++;
-            //}
             int[] values=(int[])Enum.GetValues(typeof(Categories));
             int count = 0;
             int lower = 0;
             
             foreach (var name in Categories.GetNames(typeof(Categories)))
             {
-                //Console.WriteLine(name+ " "+ count);
-                //Console.WriteLine("Current val: "+ values[count]);
+       
                 if ((inputValue >= lower) && (inputValue <=values[count])){
                     Console.WriteLine("The category is " + name);
                     break;
@@ -92,7 +70,9 @@ namespace LabsheetClassLibrary
                 //ask user input
                 Console.WriteLine("Enter a number between 1 and 100");
                 intVal = Convert.ToInt32(Console.ReadLine());
+
                 Console.WriteLine();
+                //display Categories and check category
                 DisplayCategories();
                 CheckRange(intVal);
                 Console.WriteLine();
